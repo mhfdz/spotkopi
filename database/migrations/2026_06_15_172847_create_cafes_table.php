@@ -13,17 +13,26 @@ return new class extends Migration
     {
         Schema::create('cafes', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
-            $table->string('slug');
-            $table->string('operating_hours')->nullable();
-            $table->string('wifi_quality')->nullable();
-            $table->string('power_outlets')->nullable();
-            $table->string('noise_level')->nullable();
-            $table->boolean('air_conditioner')->default(false);
+            $table->string('slug')->unique();
+
+            $table->string('jam_operasional')->nullable();
+
+            $table->string('wifi')->nullable();
+            $table->string('colokan')->nullable();
+            $table->string('kebisingan')->nullable();
+
+            $table->boolean('ac')->default(false);
+
             $table->integer('price_min')->nullable();
             $table->integer('price_max')->nullable();
+
             $table->string('payment_method')->nullable();
-            $table->string('maps_url')->nullable();
+
+            $table->text('maps_url')->nullable();
+            $table->text('foto_url')->nullable();
+
             $table->timestamps();
         });
     }

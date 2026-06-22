@@ -31,9 +31,9 @@ class HomeController extends Controller
         // Tarik data kafe dari database MySQL dengan filter pencarian jika ada
         $cafes = Cafe::when($search, function ($query, $search) {
             return $query->where('name', 'like', "%{$search}%")
-                         ->orWhere('wifi_quality', 'like', "%{$search}%")
-                         ->orWhere('power_outlets', 'like', "%{$search}%")
-                         ->orWhere('noise_level', 'like', "%{$search}%");
+                         ->orWhere('wifi', 'like', "%{$search}%")
+                         ->orWhere('colokan', 'like', "%{$search}%")
+                         ->orWhere('kebisingan', 'like', "%{$search}%");
         })->get();
 
         // Kembalikan ke halaman depan dengan membawa data $cafes

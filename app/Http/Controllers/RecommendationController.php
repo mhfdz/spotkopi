@@ -27,10 +27,10 @@ class RecommendationController extends Controller
         $matrix = [];
         // 1. Transformasi data
         foreach ($cafes as $cafe) {
-            $c1 = stripos($cafe->wifi_quality, 'kencang') !== false ? 3 : (stripos($cafe->wifi_quality, 'sedang') !== false ? 2 : 1);
-            $c2 = stripos($cafe->power_outlets, 'banyak') !== false ? 3 : (stripos($cafe->power_outlets, 'cukup') !== false ? 2 : 1);
-            $c3 = stripos($cafe->noise_level, 'sunyi') !== false ? 3 : (stripos($cafe->noise_level, 'sedang') !== false ? 2 : 1);
-            $c4 = $cafe->air_conditioner ? 1 : 0;
+            $c1 = stripos($cafe->wifi, 'kencang') !== false ? 3 : (stripos($cafe->wifi, 'sedang') !== false ? 2 : 1);
+            $c2 = stripos($cafe->colokan, 'banyak') !== false ? 3 : (stripos($cafe->colokan, 'cukup') !== false ? 2 : 1);
+            $c3 = stripos($cafe->kebisingan, 'sunyi') !== false ? 3 : (stripos($cafe->kebisingan, 'sedang') !== false ? 2 : 1);
+            $c4 = $cafe->ac ? 1 : 0;
             $c5 = $cafe->price_min;
 
             $matrix[] = ['cafe' => $cafe, 'c1' => $c1, 'c2' => $c2, 'c3' => $c3, 'c4' => $c4, 'c5' => $c5];

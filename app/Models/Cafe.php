@@ -6,34 +6,41 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cafe extends Model
 {
-    // ... isi $fillable yang lama ...
+    protected $fillable = [
+        'name',
+        'slug',
+        'jam_operasional',
+        'wifi',
+        'colokan',
+        'kebisingan',
+        'ac',
+        'price_min',
+        'price_max',
+        'payment_method',
+        'maps_url',
+        'foto_url',
+    ];
 
-    // Fungsi untuk mendapatkan bobot nilai
     public static function getWeight($criteria, $value)
     {
         $map = [
             'wifi' => [
-                'Ngebut' => 5, 
-                'Kencang' => 4, 
-                'Sedang' => 3, 
-                'Lemot' => 2, 
-                'Tidak Ada' => 1
+                'No Wifi' => 1,
+                'Lemot'   => 2,
+                'Sedeng'  => 3,
+                'Kenceng' => 4,
             ],
-            'outlet' => [
-                'Sangat Banyak' => 5, 
-                'Banyak' => 4, 
-                'Lumayan' => 3, 
-                'Cukup' => 2, 
-                'Terbatas' => 1
+            'colokan' => [
+                'Terbatas' => 1,
+                'Banyak'   => 3,
             ],
-            'noise' => [
-                'Sunyi' => 3, 
-                'Sedang' => 2, 
-                'Bising' => 1
-            ]
+            'kebisingan' => [
+                'Ramai'  => 1,   // Di seeder tertulis 'Ramai', bukan 'Bising'
+                'Sedang' => 2,
+                'Sunyi'  => 3,
+            ],
         ];
 
-        // Mengembalikan nilai map, jika tidak ketemu, kembalikan 1 (default terendah)
         return $map[$criteria][$value] ?? 1;
     }
 }

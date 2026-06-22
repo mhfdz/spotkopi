@@ -21,7 +21,7 @@
                         <div class="card-body d-flex justify-content-between align-items-center p-3">
                             <div>
                                 <h5 class="fw-bold m-0" style="color: #111;">{{ $fav->cafe->name }}</h5>
-                                <p class="text-muted m-0 small mt-1">Buka: {{ $fav->cafe->operating_hours }}</p>
+                                <p class="text-muted m-0 small mt-1">Buka: {{ $fav->cafe->jam_operasional }}</p>
                             </div>
                             <div class="d-flex gap-2">
                                 <a href="/cafe/{{ $fav->cafe_id }}" class="btn btn-sm btn-dark fw-bold">Detail</a>

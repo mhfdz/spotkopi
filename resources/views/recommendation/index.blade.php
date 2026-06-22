@@ -57,7 +57,7 @@
                             <strong style="color: #0d6efd;">{{ $cafe->name }}</strong>
                         </a>
                         <br>
-                        <small class="text-muted">Buka {{ $cafe->operating_hours }}</small>
+                        <small class="text-muted">Buka {{ $cafe->jam_operasional }}</small>
                     </div>
                     <span class="badge bg-primary fs-6">Skor: {{ $cafe->skor }}</span>
                 </li>
