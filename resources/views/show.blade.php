@@ -2,14 +2,12 @@
 
 @section('content')
 <div class="container mt-4" style="max-width: 800px;">
-    <!-- Tombol Kembali -->
     <div class="mb-4">
         <a href="/" class="text-decoration-none text-dark fw-semibold d-inline-flex align-items-center gap-2" style="font-size: 14px;">
             ← Kembali ke Dashboard
         </a>
     </div>
 
-    <!-- Blok Utama Detail Kafe -->
     <div class="card border-0 shadow-sm p-4 mb-4" style="background: #fff; border-radius: 12px;">
         <div class="d-flex justify-content-between align-items-start border-bottom pb-3 mb-4">
             <div>
@@ -21,9 +19,20 @@
             </span>
         </div>
 
-        <!-- Grid Informasi -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="ratio ratio-21x9 border" style="border-radius: 8px; overflow: hidden;">
+                    <iframe
+                        src="https://maps.google.com/maps?q={{ urlencode($cafe->name . ' Semarang') }}&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
         <div class="row g-4">
-            <!-- Kolom Kiri: Fasilitas Utama -->
             <div class="col-md-7">
                 <h5 class="fw-bold mb-3" style="color: #111;">Kondisi & Fasilitas Tempat</h5>
                 
@@ -49,7 +58,6 @@
                 </div>
             </div>
 
-            <!-- Kolom Kanan: Jam Operasional & Catatan -->
             <div class="col-md-5">
                 <div class="p-3 style-panel" style="background: #fafafa; border-radius: 8px; border: 1px solid #eaeaea;">
                     <h6 class="fw-bold mb-3" style="color: #111;">🕒 Jam Operasional</h6>

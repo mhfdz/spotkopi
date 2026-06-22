@@ -11,27 +11,35 @@
             @csrf
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label>WiFi</label>
+                    <label class="fw-bold">Prioritas WiFi</label>
                     <select name="weight_wifi" class="form-select">
-                        <option value="1">1</option><option value="3">3</option><option value="5" selected>5</option>
+                        <option value="5">Sangat Penting</option>
+                        <option value="3">Penting</option>
+                        <option value="1">Biasa Saja</option>
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label>Colokan</label>
+                    <label class="fw-bold">Prioritas Colokan</label>
                     <select name="weight_outlets" class="form-select">
-                        <option value="1">1</option><option value="3">3</option><option value="5" selected>5</option>
+                        <option value="5">Sangat Penting</option>
+                        <option value="3">Penting</option>
+                        <option value="1">Biasa Saja</option>
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label>Harga</label>
+                    <label class="fw-bold">Prioritas Harga</label>
                     <select name="weight_price" class="form-select">
-                        <option value="1">1</option><option value="3">3</option><option value="5" selected>5</option>
+                        <option value="5">Sangat Penting</option>
+                        <option value="3">Penting</option>
+                        <option value="1">Biasa Saja</option>
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label>Kebisingan</label>
+                    <label class="fw-bold">Prioritas Kebisingan</label>
                     <select name="weight_noise" class="form-select">
-                        <option value="1">1</option><option value="3">3</option><option value="5" selected>5</option>
+                        <option value="5">Sangat Penting</option>
+                        <option value="3">Penting</option>
+                        <option value="1">Biasa Saja</option>
                     </select>
                 </div>
             </div>
